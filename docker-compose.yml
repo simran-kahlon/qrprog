@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  qrcode:
+    build: .
+    stdin_open: true #docker run -i
+    tty: true       #docker run -i
+    environment:
+      QR_CODE_IMAGE_DIRECTORY: 'images'
+      QR_CODE_DEFAULT_URL: 'https://hub.docker.com/r/simrankk/qrcode'
+      QR_CODE_DAFAULT_FILE_NAME: 'docker.png'
+    volumes:
+      - .:/home/myuser
